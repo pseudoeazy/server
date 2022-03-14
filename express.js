@@ -3,7 +3,7 @@ const cookieParser = require("cookie-parser");
 const compress = require("compression");
 const helmet = require("helmet");
 const cors = require("cors");
-const authRouter = require("./routes/auth");
+const loginRouter = require("./routes/login");
 const userRouter = require("./routes/user");
 
 const server = express();
@@ -17,7 +17,7 @@ server.use(helmet());
 server.use(cors());
 
 //Routes middleware
-server.use("/api/auth", authRouter);
+server.use("/api/auth", loginRouter);
 server.use("/api/users", userRouter);
 
 module.exports = server;

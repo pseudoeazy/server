@@ -1,7 +1,6 @@
-const config = require("./config/config");
+const { config, dbConnect } = require("./config/connect");
 const server = require("./express");
 
-const dbConnect = require("./models/connect");
 
 // database connection
 dbConnect();

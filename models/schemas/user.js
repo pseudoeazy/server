@@ -67,6 +67,5 @@ UserSchema.virtual("setInitials")
   .get(function () {
     return `${this.firstName[0]}${this.lastName[0]}`.toUpperCase();
   });
-// console.log("Schema.Types.ObjectId: ", mongoose.Schema.Types.ObjectId);
-// console.log("Schema: ", mongoose.Schema);
+
 module.exports = mongoose.model("User", UserSchema);
