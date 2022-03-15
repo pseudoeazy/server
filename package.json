@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "jest --watchAll",
+    "test": "jest  --forceExit --detectOpenHandles  --watchAll --maxWorkers=1",
     "start": "nodemon server.js",
     "check": "nodemon controllers/joke.js"
   },

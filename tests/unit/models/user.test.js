@@ -1,3 +1,4 @@
+const mongoose = require("mongoose");
 const { dbConnect } = require("../../../config/connect");
 const User = require("../../../models/schemas/user");
 const {
@@ -17,7 +18,9 @@ describe("User - DB CRUD", () => {
     //empty collection
     await User.deleteMany({});
   });
-
+  afterAll(() => {
+    mongoose.connection.close();
+  });
   describe("creatUser", () => {
     it("should create a new user", async () => {
       const user = {

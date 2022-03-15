@@ -6,18 +6,18 @@ const cors = require("cors");
 const loginRouter = require("./routes/login");
 const userRouter = require("./routes/user");
 
-const server = express();
+const app = express();
 
 //middlewares
-server.use(express.json());
-server.use(express.urlencoded({ extended: true }));
-server.use(cookieParser());
-server.use(compress());
-server.use(helmet());
-server.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser());
+app.use(compress());
+app.use(helmet());
+app.use(cors());
 
 //Routes middleware
-server.use("/api/auth", loginRouter);
-server.use("/api/users", userRouter);
+app.use("/api/login", loginRouter);
+app.use("/api/users", userRouter);
 
-module.exports = server;
+module.exports = app;
